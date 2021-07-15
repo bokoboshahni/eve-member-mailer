@@ -1,0 +1,83 @@
+
+
+<div class="mt-6 overflow-hidden bg-white divide-y divide-gray-200 rounded-lg shadow">
+  <div class="bg-white px-4 py-5 border-b border-gray-200 sm:px-6">
+    <div class="-ml-4 -mt-4 flex justify-between items-center flex-wrap sm:flex-nowrap">
+      <div class="ml-4 mt-4">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <%= image_tag eve_character_image_url(@campaign_member.member.eve_character_id, 64), class: 'h-12 w-12 rounded-full' %>
+          </div>
+          <div class="ml-4">
+            <h3 class="text-lg leading-6 font-medium text-gray-900">
+              <%= @campaign_member.member.name %>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="ml-4 mt-4 flex-shrink-0 flex">
+        <%= link_to 'Back', campaign_path(@campaign), class: 'relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500' %>
+      </div>
+    </div>
+  </div>
+  <div class="px-4 py-5 sm:p-6">
+    <div class="flow-root">
+      <ul class="-mb-8">
+        <% @campaign.steps.each do |step| %>
+          <% delivery = @deliveries.find { |d| d.step_id == step.id } %>
+          <li>
+            <div class="relative pb-8">
+              <% unless @campaign.steps.maximum(:position) == step.position %><span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span><% end %>
+              <div class="relative flex space-x-3 items-center">
+                <div class="min-w-0 flex-1 pt-1.5 flex justify-start space-x-4 items-center">
+                  <div>
+                    <% if step.kind == 'evemail' %>
+                      <%
+                        status_color =
+                          case delivery&.status
+                          when 'delivered'
+                            'green'
+                          when 'scheduled'
+                            'blue'
+                          when 'error'
+                            'red'
+                          else
+                            'yellow'
+                          end
+                      %>
+                      <span class="flex items-center justify-center w-8 h-8 bg-<%= status_color %>-400 rounded-full ring-8 ring-white">
+                        <%= render partial: 'icons/solid/mail-open', locals: { w: 5, h: 5, color: 'white' } %>
+                      </span>
+                    <% elsif step.kind == 'delay' %>
+                      <span class="flex items-center justify-center w-8 h-8 bg-gray-400 rounded-full ring-8 ring-white">
+                        <%= render partial: 'icons/solid/clock', locals: { w: 5, h: 5, color: 'white' } %>
+                      </span>
+                    <% end %>
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-sm text-gray-500"><a href="#" class="font-medium text-gray-900">
+                      <% if step.kind == 'evemail' %><%= step.template.name %>
+                      <% elsif step.kind == 'delay' %><%= pluralize(step.delay_days, 'day') %>
+                      <% end %>
+                    </a></p>
+                  </div>
+                  <div class="text-sm text-right text-gray-500 whitespace-nowrap">
+                    <% if delivery&.status == 'delivered' && delivery&.delivered_at %>
+                      <span class="text-green-800 font-semibold">Delivered <%= time_tag delivery.delivered_at %></span>
+                    <% elsif delivery&.status == 'scheduled' && delivery&.scheduled_at %>
+                      <span class="text-blue-800 font-semibold">Scheduled for <%= time_tag delivery.scheduled_at %></span>
+                    <% elsif delivery&.status == 'error' %>
+                      <span class="text-red-800 font-semibold">Delivery error!</span>
+                    <% elsif step.kind != 'delay' && delivery.nil? %>
+                      <span class="text-red-800 font-semibold">No delivery scheduled!</span>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

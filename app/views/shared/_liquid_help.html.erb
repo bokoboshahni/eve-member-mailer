@@ -1,0 +1,54 @@
+<div>
+  <p class="mb-6">
+    You can use <a href="https://shopify.github.io/liquid/basics/introduction/" class="font-medium text-indigo-600 hover:text-indigo-500">Liquid</a> template syntax in both the subject and body of the template.
+    For example, to insert the recipient's name, use <span class="font-mono font-semibold">{{ recipient }}</span>. The following variables are available for you to use:
+  </p>
+  <div class="flex flex-col">
+    <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+        <div class="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                  Variable
+                </th>
+                <th scope="col" class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                  Description
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="bg-white">
+                <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
+                  <span class="font-mono font-medium">corporation</span>
+                </td>
+                <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                  The corporation name.
+                </td>
+              </tr>
+
+              <tr class="bg-white">
+                <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
+                  <span class="font-mono font-medium">recipient</span>
+                </td>
+                <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                  The character name of the recipient.
+                </td>
+              </tr>
+
+              <tr class="bg-white">
+                <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">
+                  <span class="font-mono font-medium">sender</span>
+                </td>
+                <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                  The character name of the sender.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

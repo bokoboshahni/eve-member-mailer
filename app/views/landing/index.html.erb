@@ -1,0 +1,25 @@
+<div class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full space-y-8">
+    <% if flash[:error] %>
+    <div class="rounded-md bg-red-50 p-4">
+      <div class="flex">
+        <div class="ml-3">
+          <div class="mt-2 text-sm text-red-700">
+            <p>
+              <%= flash[:error] %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <div>
+      <%= image_pack_tag 'brave-logo.png', class: 'mx-auto h-48 w-auto' %>
+    </div>
+    <div>
+      <%= form_with url: user_login_omniauth_authorize_path do |f| %>
+        <%= f.submit 'Log in with EVE SSO', type: :image, src: 'https://web.ccpgamescdn.com/eveonlineassets/developers/eve-sso-login-black-large.png', class: 'relative flex justify-center my-2 mx-auto' %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+# Ignore bundler config.
+/.bundle
+/vendor/bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore other generated files.
+/public/assets
+.byebug_history
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Ignore test files.
+/coverage
+
+# Ignore generated assets.
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+# Ignore local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.staging.local
+.env
+
+/db/sde/*
+/db/esi/*

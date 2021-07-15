@@ -1,0 +1,21 @@
+<!-- Static sidebar for desktop -->
+<div class="hidden md:flex md:flex-shrink-0">
+  <div class="flex flex-col w-64">
+    <!-- Sidebar component, swap this element with another sidebar if you like -->
+    <div class="flex flex-col flex-1 h-0">
+      <div class="flex items-center flex-shrink-0 h-16 px-4 bg-gray-900">
+        <%= image_pack_tag 'brave-logo.png', class: 'h-8 w-auto mx-auto' %>
+      </div>
+      <div class="flex flex-col flex-1 overflow-y-auto">
+        <nav class="flex-1 px-2 py-4 space-y-1 bg-gray-800">
+          <%= render partial: 'side_nav_link', locals: { current: current_nav?('dashboard'), text: 'Dashboard', icon: 'home', url: dashboard_path } %>
+          <%= render partial: 'side_nav_link', locals: { current: current_nav?('lists'), text: 'Lists', icon: 'collection', url: lists_path } %>
+          <%= render partial: 'side_nav_link', locals: { current: current_nav?('broadcasts'), text: 'Broadcasts', icon: 'speakerphone', url: broadcasts_path } %>
+          <%= render partial: 'side_nav_link', locals: { current: current_nav?('campaigns'), text: 'Campaigns', icon: 'mail', url: campaigns_path } %>
+          <%= render partial: 'side_nav_link', locals: { current: current_nav?('templates'), text: 'Templates', icon: 'template', url: templates_path } %>
+          <%= render partial: 'side_nav_link', locals: { current: current_nav?('reports'), text: 'Reports', icon: 'chart-bar', url: reports_path } %>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
