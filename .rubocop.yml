@@ -1,0 +1,64 @@
+require:
+  - rubocop-faker
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - bin/*
+    - db/schema.rb
+    - node_modules/**/*
+    - tmp/**/*
+    - vendor/**/*
+
+Lint/EmptyBlock:
+  Exclude:
+    - spec/**/*.rb
+
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/*.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - db/migrate/*.rb
+    - spec/**/*.rb
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*.rb
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - production
+    - staging
+    - test
+
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+RSpec/ContextWording:
+  Exclude:
+    - spec/features/**/*_spec.rb
+
+RSpec/DescribeClass:
+  Exclude:
+    - spec/features/**/*_spec.rb
+    - spec/requests/**/*_spec.rb
+
+RSpec/ExampleLength:
+  Exclude:
+    - spec/features/**/*_spec.rb
+
+RSpec/FilePath:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Exclude:
+    - spec/features/**/*_spec.rb
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10

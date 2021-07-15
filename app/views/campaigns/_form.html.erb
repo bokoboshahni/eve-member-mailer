@@ -1,0 +1,30 @@
+<div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+  <div class="sm:col-span-6">
+    <%= f.label :name, 'Name', class: 'block text-sm font-medium text-gray-700' %>
+    <div class="mt-1">
+      <%= f.text_field :name, class: 'appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' %>
+    </div>
+  </div>
+
+  <div class="sm:col-span-6">
+    <%= f.label :description, 'Description', class: 'block text-sm font-medium text-gray-700' %>
+    <div class="mt-1">
+      <%= f.text_field :description, class: 'appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' %>
+    </div>
+  </div>
+
+  <div class="sm:col-span-6">
+    <%= f.label :kind, 'Type', class: 'block text-sm font-medium text-gray-700' %>
+    <%= f.select :kind, Campaign::KINDS.to_a.map(&:reverse), {}, class: 'mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md' %>
+  </div>
+
+  <div class="sm:col-span-1">
+    <%= f.label :delivery_hour, 'Delivery Window (Hour)', class: 'block text-sm font-medium text-gray-700' %>
+    <%= f.select :delivery_hour, 0..23, {}, class: 'mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md' %>
+  </div>
+
+  <div class="sm:col-span-1">
+    <%= f.label :delivery_minute, 'Delivery Window (Minute)', class: 'block text-sm font-medium text-gray-700' %>
+    <%= f.select :delivery_minute, 0..23, {}, class: 'mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md' %>
+  </div>
+</div>

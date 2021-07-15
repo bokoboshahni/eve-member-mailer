@@ -1,0 +1,27 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+
+development:
+  <<: *default
+  <% if !ENV['DATABASE_URL'] %>
+  database: eve_member_mailer_dev
+  <% end %>
+
+test:
+  <<: *default
+  database: eve_member_mailer_test
+  <% if ENV['GITHUB_ACTIONS'] == 'true' %>
+  host: localhost
+  port: 5432
+  username: postgres
+  password: postgres
+  <% end %>
+
+production:
+  <<: *default
+  connect_timeout: 2
+  checkout_timeout: 5
+  variables:
+    statement_timeout: 5000

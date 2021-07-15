@@ -1,0 +1,14 @@
+---
+:concurrency: 10
+:queues:
+  - schedule_deliveries
+  - send_deliveries
+  - sync_campaigns
+  - sync_corporations
+  - sync_lists
+:schedule: {}
+  # SendAllScheduledDeliveriesJob:
+  #   every: ['1m', first_in: '0s']
+
+  # SyncAllCorporationMembersJob:
+  #   every: ['1h', first_in: '0s']

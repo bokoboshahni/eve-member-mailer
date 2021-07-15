@@ -1,0 +1,7 @@
+<% if flash[:success].present? %>
+  <%= render partial: 'shared/alert', locals: { color: 'green', text: flash[:success] } %>
+<% elsif flash[:error].present? %>
+  <%= render partial: 'shared/alert', locals: { color: 'red', text: flash[:error] } %>
+<% elsif flash[:warning].present? %>
+  <%= render partial: 'shared/alert', locals: { color: 'yellow', text: flash[:warning] } %>
+<% end %>

@@ -1,0 +1,9 @@
+coverage/
+log/*.log
+node_modules
+tmp/screenshots
+tmp/cache
+tmp/miniprofiler
+tmp/pids/*.pid
+tmp/sockets
+vendor/bundle

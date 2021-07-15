@@ -1,0 +1,77 @@
+<div class="mt-6 overflow-hidden bg-white divide-y divide-gray-200 rounded-lg shadow">
+  <div class="px-4 py-5 bg-white border-b border-gray-200 sm:px-6">
+    <div class="flex flex-wrap items-center justify-between -mt-2 -ml-4 sm:flex-nowrap">
+      <div class="mt-2 ml-4">
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          Steps
+        </h3>
+      </div>
+      <div class="flex-shrink-0 mt-2 ml-4">
+        <%= link_to 'Add Step', new_campaign_step_path(@campaign), class: 'relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500' %>
+      </div>
+    </div>
+  </div>
+  <div class="px-4 py-5 sm:p-6">
+    <div class="flow-root">
+      <ul class="-mb-8">
+        <% @campaign.steps.order(:position).each do |step| %>
+          <li>
+            <div class="relative pb-8">
+              <% unless @campaign.steps.maximum(:position) == step.position %><span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span><% end %>
+              <div class="relative flex space-x-3 items-center">
+                <div class="min-w-0 flex-1 pt-1.5 flex justify-start space-x-4 items-center">
+                  <div>
+                    <% if step.kind == 'evemail' %>
+                    <span class="flex items-center justify-center w-8 h-8 bg-green-400 rounded-full ring-8 ring-white">
+                      <%= render partial: 'icons/solid/mail-open', locals: { w: 5, h: 5, color: 'white' } %>
+                    </span>
+                    <% elsif step.kind == 'delay' %>
+                    <span class="flex items-center justify-center w-8 h-8 bg-blue-400 rounded-full ring-8 ring-white">
+                      <%= render partial: 'icons/solid/clock', locals: { w: 5, h: 5, color: 'white' } %>
+                    </span>
+                    <% end %>
+                  </div>
+                  <div class="flex-grow">
+                    <p class="text-sm text-gray-500"><a href="#" class="font-medium text-gray-900">
+                      <% if step.kind == 'evemail' %><%= step.template.name %>
+                      <% elsif step.kind == 'delay' %><%= pluralize(step.delay_days, 'day') %>
+                      <% end %>
+                    </a></p>
+                  </div>
+                  <div class="text-sm text-right text-gray-500 whitespace-nowrap">
+                    <span class="relative z-0 inline-flex rounded-md shadow-sm">
+                      <%= form_with model: step, url: campaign_step_path(@campaign, step) do |f| %>
+                        <%= f.hidden_field :direction, value: 'down' %>
+                        <%= f.button class: 'relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-l-md hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500' do %>
+                          <span class="sr-only">Move down</span>
+                          <%= render partial: 'icons/solid/chevron-down', locals: { w: 5, h: 5, color: 'gray' } %>
+                        <% end %>
+                      <% end %>
+                      <%= form_with model: step, url: campaign_step_path(@campaign, step) do |f| %>
+                        <%= f.hidden_field :direction, value: 'up' %>
+                        <%= f.button class: 'relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500' do %>
+                          <span class="sr-only">Move up</span>
+                          <%= render partial: 'icons/solid/chevron-up', locals: { w: 5, h: 5, color: 'gray' } %>
+                        <% end %>
+                      <% end %>
+                      <%= link_to edit_campaign_step_path(@campaign, step), class: 'relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500' do %>
+                        <span class="sr-only">Edit</span>
+                        <%= render partial: 'icons/solid/pencil', locals: { w: 5, h: 5, color: 'gray' } %>
+                      <% end %>
+                      <%= form_with url: campaign_step_path(@campaign, step), html: { method: :delete } do |f| %>
+                        <%= f.button class: 'relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rrounded-r-md hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500' do %>
+                          <span class="sr-only">Delete</span>
+                          <%= render partial: 'icons/solid/x-circle', locals: { w: 5, h: 5, color: 'gray' } %>
+                        <% end %>
+                      <% end %>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

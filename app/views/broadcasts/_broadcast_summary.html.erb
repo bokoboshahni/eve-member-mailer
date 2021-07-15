@@ -1,0 +1,67 @@
+<div class="overflow-hidden bg-white divide-y divide-gray-200 rounded-lg shadow">
+  <div class="px-4 py-5 bg-white border-b border-gray-200 sm:px-6">
+    <div class="flex flex-wrap items-center justify-between -mt-2 -ml-4 sm:flex-nowrap">
+      <div class="mt-2 ml-4">
+        <h3 class="text-lg font-medium leading-6 text-gray-900">
+          <%= @broadcast.name %>
+        </h3>
+      </div>
+      <div class="flex-shrink-0 mt-2 ml-4">
+        <% unless %w[delivering delivered].include?(@broadcast.status) %>
+          <%= link_to 'Schedule', new_broadcast_schedule_path(@broadcast), class: 'relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500' %>
+          <%= link_to 'Edit', edit_broadcast_path(@broadcast), class: 'relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500' %>
+          <%= form_with url: trash_broadcast_path, class: 'inline-block', html: { method: :delete } do |f| %>
+            <%= f.submit 'Delete', class: 'relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500' %>
+          <% end %>
+        <% end %>
+        <%= link_to 'Copy', new_broadcast_path(@broadcast, broadcast_id: @broadcast.id), class: 'relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500' %>
+      </div>
+    </div>
+  </div>
+  <div class="px-4 py-5 border-t border-gray-200 sm:p-0">
+    <dl class="sm:divide-y sm:divide-gray-200">
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">
+          Sender
+        </dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-5">
+          <p class="font-mono"><%= @broadcast.sender.eve_character_name %></p>
+        </dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">
+          Status
+        </dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-5">
+          <p class="font-mono"><%= Broadcast::STATUSES[@broadcast.status.to_sym] %></code></p>
+        </dd>
+      </div>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">
+          Audience
+        </dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-5">
+          <p class="font-mono"><%= Broadcast::AUDIENCES[@broadcast.audience.to_sym] %></code></p>
+        </dd>
+      </div>
+      <% if @broadcast.audience == 'list' %>
+        <div class="py-4 sm:py-5 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-6">
+          <dt class="text-sm font-medium text-gray-500">
+            List
+          </dt>
+          <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-5">
+            <p class="font-mono"><%= @broadcast.list.name %></code></p>
+          </dd>
+        </div>
+      <% end %>
+      <div class="py-4 sm:py-5 sm:grid sm:grid-cols-6 sm:gap-4 sm:px-6">
+        <dt class="text-sm font-medium text-gray-500">
+          Scheduled for
+        </dt>
+        <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-5">
+          <p class="font-mono"><%= time_tag @broadcast.scheduled_at if @broadcast.scheduled_at %></code></p>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>

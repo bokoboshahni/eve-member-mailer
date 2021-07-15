@@ -1,0 +1,10 @@
+<div class="overflow-hidden bg-white divide-y divide-gray-200 rounded-lg shadow" x-data="{ subject: '<%= @condition.subject || 'character_name' %>' }">
+  <div class="px-4 py-5 sm:px-6">
+    <h1 class="text-2xl font-bold text-gray-900">Edit List Condition</h1>
+  </div>
+  <div class="px-4 py-5 sm:p-6">
+    When
+    <%= select_tag :subject, options_for_select(ListCondition::SUBJECTS.to_a.map(&:reverse)), class: 'inline-block py-2 pl-3 pr-10 text-base border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm', 'x-on:change' => "subject = $el.value" %>
+  </div>
+  <%= render partial: 'list_conditions/form' %>
+</div>

@@ -1,0 +1,112 @@
+<% if @list.kind == 'auto' %>
+  <div class="mt-6 overflow-hidden bg-white divide-y divide-gray-200 rounded-lg shadow">
+    <div class="px-4 py-5 bg-white border-b border-gray-200 sm:px-6">
+      <div class="flex flex-wrap items-center justify-between -mt-2 -ml-4 sm:flex-nowrap">
+        <div class="mt-2 ml-4">
+          <h3 class="text-lg font-medium leading-6 text-gray-900">
+            Conditions
+          </h3>
+        </div>
+        <div class="flex-shrink-0 mt-2 ml-4">
+          <%= link_to 'Add Condition', new_list_condition_path(@list), class: 'relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500' %>
+        </div>
+      </div>
+    </div>
+    <div class="px-4 py-5 border-t border-gray-200 sm:p-0">
+      <div class="flex flex-col">
+        <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8">
+            <div class="overflow-hidden border-b border-gray-200 shadow sm:rounded-lg">
+              <table class="min-w-full divide-y divide-gray-200">
+                <tbody>
+                  <% @list.conditions.each do |condition| %>
+                    <tr class="bg-white">
+                      <td class="px-6 py-4 text-sm text-gray-500 whitespace-nowrap">
+                        When
+                        <% if condition.subject == 'start_date' %>
+                          <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                            <%= ListCondition::SUBJECTS[condition.subject.to_sym] %>
+                          </span>
+                          <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                            <%= ListCondition::CONDITIONS[condition.condition.to_sym] %>
+                          </span>
+                          <% if condition.value_prefix.present? && condition.condition != 'is_a_timestamp' %>
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                              <%= ListCondition::VALUE_PREFIXES[condition.value_prefix.to_sym] %>
+                            </span>
+                          <% end %>
+                          <% unless %w[is_a_timestamp is_a_timestamp_between].include?(condition.condition) %>
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                              <% if condition.value_prefix == 'relative_date' %><%= pluralize(condition.value, 'day') %>
+                              <% elsif condition.value_prefix == 'specific_date' %><%= time_tag condition.value %>
+                              <% end %>
+                            </span>
+                          <% end %>
+                          <% if condition.value_from && condition.condition == 'is_timestamp_between' %>
+                            from
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                              <%= pluralize(condition.value, 'day') %>
+                            </span>
+                          <% end %>
+                          <% if condition.value_to && condition.condition == 'is_timestamp_between' %>
+                            to
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                              <%= pluralize(condition.value, 'day') %>
+                            </span>
+                          <% end %>
+                          <% if condition.value_suffix.present? && !%w[is_a_timestamp is_a_timestamp_between].include?(condition.condition) %>
+                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                              <%= ListCondition::VALUE_SUFFIXES[condition.value_suffix.to_sym] %>
+                            </span>
+                          <% end %>
+                        <% elsif condition.subject == 'character_name' %>
+                          <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                            <%= ListCondition::SUBJECTS[condition.subject.to_sym] %>
+                          </span>
+                          <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                            <%= ListCondition::CONDITIONS[condition.condition.to_sym] %>
+                          </span>
+                          <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-gray-100 text-gray-800">
+                            <%= condition.value %>
+                          </span>
+                        <% end %>
+                      </td>
+                      <td class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap">
+                        <span class="relative z-0 inline-flex rounded-md shadow-sm">
+                          <%= form_with model: condition, url: list_condition_reorder_path(@list, condition) do |f| %>
+                            <%= f.hidden_field :direction, value: 'down' %>
+                            <%= f.button class: 'relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-l-md hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500' do %>
+                              <span class="sr-only">Move down</span>
+                              <%= render partial: 'icons/solid/chevron-down', locals: { w: 5, h: 5, color: 'gray' } %>
+                            <% end %>
+                          <% end %>
+                          <%= form_with model: condition, url: list_condition_reorder_path(@list, condition) do |f| %>
+                            <%= f.hidden_field :direction, value: 'up' %>
+                            <%= f.button class: 'relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500' do %>
+                              <span class="sr-only">Move up</span>
+                              <%= render partial: 'icons/solid/chevron-up', locals: { w: 5, h: 5, color: 'gray' } %>
+                            <% end %>
+                          <% end %>
+                          <%= link_to edit_list_condition_path(@list, condition), class: 'relative inline-flex items-center px-2 py-2 -ml-px text-sm font-medium text-gray-500 bg-white border border-gray-300 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500' do %>
+                            <span class="sr-only">Edit</span>
+                            <%= render partial: 'icons/solid/pencil', locals: { w: 5, h: 5, color: 'gray' } %>
+                          <% end %>
+                          <%= form_with url: list_condition_path(@list, condition), html: { method: :delete } do |f| %>
+                            <%= f.button class: 'relative inline-flex items-center px-2 py-2 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-r-md hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500' do %>
+                              <span class="sr-only">Delete</span>
+                              <%= render partial: 'icons/solid/x-circle', locals: { w: 5, h: 5, color: 'gray' } %>
+                            <% end %>
+                          <% end %>
+                        </span>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
