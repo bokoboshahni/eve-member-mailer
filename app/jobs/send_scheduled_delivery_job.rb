@@ -2,7 +2,7 @@
 
 # Sends a scheduled delivery.
 class SendScheduledDeliveryJob < ApplicationJob
-  include Sidekiq::Throttled::Job
+  include Sidekiq::Throttled::Worker
 
   sidekiq_options retry: 5, lock_until: :while_executing, on_conflict: :raise, queue: 'send_deliveries'
 
