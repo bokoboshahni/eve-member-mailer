@@ -41,7 +41,7 @@ module EVEMemberMailer
 
     config.generators.system_tests = nil
 
-    config.rollout = Rollout.new(Redis.new(url: ENV.fetch('REDIS_FEATURES_URL', 'redis://localhost:6379/2')),
+    config.rollout = Rollout.new(Redis.new(url: ENV.fetch('REDIS_URL_FEATURES', 'redis://localhost:6379/2')),
                                  logging: { history_length: 100, global: true })
 
     config.slowpoke.timeout = lambda do |env|
