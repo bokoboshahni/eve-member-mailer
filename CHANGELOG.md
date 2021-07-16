@@ -1,5 +1,12 @@
 # EVE Member Mailer Changelog
 
+# [1.1.0](https://github.com/bokoboshahni/eve-member-mailer/compare/v1.0.0...v1.1.0) (2021-07-16)
+
+
+### Features
+
+* Rename to REDIS_URL_FEATURES ([505abe3](https://github.com/bokoboshahni/eve-member-mailer/commit/505abe393d1b1e31cdc1e4791ba73cd433293261))
+
 # 1.0.0 (2021-07-15)
 
 
