@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
 namespace :db do
-  namespace :migrate do
-    task :helm do
-      begin
-        Rake::Task['db:migrate'].invoke
-      rescue ActiveRecord::NoDatabaseError
-        puts 'Database does not exist yet. Run db:schema:load after PostgreSQL is ready.'
+  namespace :schema do
+    namespace :load do
+      task initial: :environment do
+        if ActiveRecord::Base.connection.schema_migration.table_exists?
+          puts 'Schema has already been loaded. Skipping initial load.'
+          Kernel.exit(0)
+        end
+
+        Rake::Task['db:schema:load'].invoke
       end
     end
   end
