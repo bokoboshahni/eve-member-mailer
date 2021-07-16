@@ -20,14 +20,6 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def info_for_papertrail
-    { user_id: current_user.id }
-  end
-
-  def user_for_papertrail
-    current_user.id
-  end
-
   def user_not_authorized(_exception)
     flash[:error] = 'You are not authorized to do that.'
     redirect_to(request.referer || root_path)
