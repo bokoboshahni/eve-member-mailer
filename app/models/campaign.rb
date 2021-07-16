@@ -66,7 +66,6 @@ class Campaign < ApplicationRecord
   audited
 
   belongs_to :owner, class_name: 'User', inverse_of: :campaigns
-  belongs_to :team, inverse_of: :campaigns
 
   has_many :campaign_steps, inverse_of: :campaign, dependent: :restrict_with_exception
   has_many :deliveries, inverse_of: :campaign, dependent: :restrict_with_exception

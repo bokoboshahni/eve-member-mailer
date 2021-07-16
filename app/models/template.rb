@@ -43,7 +43,6 @@ class Template < ApplicationRecord
   audited
 
   belongs_to :owner, class_name: 'User', inverse_of: :templates
-  belongs_to :team, inverse_of: :templates
 
   has_many :eve_deliveries, inverse_of: :template, dependent: :restrict_with_exception
 

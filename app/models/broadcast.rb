@@ -79,7 +79,6 @@ class Broadcast < ApplicationRecord
 
   belongs_to :owner, class_name: 'User', inverse_of: :broadcasts
   belongs_to :sender, inverse_of: :broadcasts
-  belongs_to :team, inverse_of: :broadcasts
 
   belongs_to :alliance, inverse_of: :broadcasts, optional: true
   belongs_to :corporation, inverse_of: :broadcasts, optional: true
