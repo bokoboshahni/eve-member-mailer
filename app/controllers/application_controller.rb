@@ -13,6 +13,7 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  helper_method :rollout
   def rollout
     Rails.application.config.rollout
   end
