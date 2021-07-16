@@ -26,6 +26,6 @@ class Alliance < ApplicationRecord
   has_many :characters, inverse_of: :alliance, dependent: :restrict_with_exception
   has_many :corporation_memberships, inverse_of: :alliance, dependent: :restrict_with_exception
   has_many :corporations, inverse_of: :alliance, dependent: :restrict_with_exception
-  has_many :deliveries, inverse_of: :alliance_id, dependent: :restrict_with_exception
+  has_many :deliveries, inverse_of: :alliance, dependent: :restrict_with_exception
   has_many :list_conditions, inverse_of: :alliance, dependent: :restrict_with_exception
 end

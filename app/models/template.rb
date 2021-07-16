@@ -44,7 +44,7 @@ class Template < ApplicationRecord
 
   belongs_to :owner, class_name: 'User', inverse_of: :templates
 
-  has_many :eve_deliveries, inverse_of: :template, dependent: :restrict_with_exception
+  has_many :deliveries, inverse_of: :template, dependent: :restrict_with_exception
 
   validates :name, presence: true
   validates :subject, presence: true

@@ -90,12 +90,12 @@ class Delivery < ApplicationRecord
 
   belongs_to :sender, inverse_of: :deliveries
 
-  belongs_to :alliance, inverse_of: :eve_deliveries_received, optional: true
-  belongs_to :broadcast, inverse_of: :eve_deliveries, optional: true
-  belongs_to :character, inverse_of: :eve_deliveries_received, optional: true
-  belongs_to :corporation, inverse_of: :eve_deliveries_received, optional: true
-  belongs_to :campaign_step, inverse_of: :eve_deliveries, optional: true
-  belongs_to :template, inverse_of: :eve_deliveries, optional: true
+  belongs_to :alliance, inverse_of: :deliveries, optional: true
+  belongs_to :broadcast, inverse_of: :deliveries, optional: true
+  belongs_to :character, inverse_of: :deliveries_received, optional: true
+  belongs_to :corporation, inverse_of: :deliveries_received, optional: true
+  belongs_to :campaign_step, inverse_of: :deliveries, optional: true
+  belongs_to :template, inverse_of: :deliveries, optional: true
 
   has_one :campaign, through: :campaign_step
 
