@@ -2,11 +2,11 @@
 
 # Base class for services.
 class ApplicationService
-  def initialize(*args); end
+  include ServiceHelpers
 
-  protected
-
-  def rollout
-    Rails.application.config.rollout
+  def self.call(*args)
+    new(*args).call
   end
+
+  def initialize(*args); end
 end
