@@ -13,11 +13,11 @@ class SyncESIAlliance < ApplicationService
   end
 
   def call
-    alliance_attrs = alliance_attrs_from(esi.alliance(alliance_id: alliance_id))
+    alliance_attrs = alliance_attrs_from(esi.get_alliance(alliance_id: alliance_id))
     alliance = Alliance.where(id: alliance_id).first_or_create!(alliance_attrs)
     alliance.update!(alliance_attrs)
     alliance
-  rescue ESI::Client::Error => e
+  rescue ESI::Errors::ClientError => e
     msg = "Unable to sync alliance #{alliance_id} from ESI: #{e.message}"
     raise Error, msg, cause: e
   end

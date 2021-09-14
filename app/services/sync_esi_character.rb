@@ -18,14 +18,14 @@ class SyncESICharacter < ApplicationService
 
   def call # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     ActiveRecord::Base.transaction do
-      character_attrs = character_attrs_from(esi.character(character_id: character_id))
+      character_attrs = character_attrs_from(esi.get_character(character_id: character_id))
       sync_alliance!(character_attrs[:alliance_id])
       sync_corporation!(character_attrs[:corporation_id]) unless Corporation.exists?(character_attrs[:corporation_id])
       character = Character.where(id: character_id).first_or_create!(character_attrs)
       character.update!(character_attrs)
       character
     end
-  rescue ESI::Client::Error => e
+  rescue ESI::Errors::ClientError => e
     msg = "Unable to sync character #{character_id} from ESI: #{e.message}"
     raise Error, msg, cause: e
   end
@@ -61,7 +61,7 @@ class SyncESICharacter < ApplicationService
   end
 
   def character_corporation_history(character_id)
-    esi.character_corporation_history(character_id: character_id)
+    esi.get_character_corporation_history(character_id: character_id)
   end
 
   def sync_alliance!(alliance_id)

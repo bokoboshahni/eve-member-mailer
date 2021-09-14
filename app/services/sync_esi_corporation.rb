@@ -13,11 +13,11 @@ class SyncESICorporation < ApplicationService
   end
 
   def call
-    corporation_attrs = corporation_attrs_from(esi.corporation(corporation_id: corporation_id))
+    corporation_attrs = corporation_attrs_from(esi.get_corporation(corporation_id: corporation_id))
     corporation = Corporation.where(id: corporation_id).first_or_create!(corporation_attrs)
     corporation.update!(corporation_attrs)
     corporation
-  rescue ESI::Client::Error => e
+  rescue ESI::Errors::ClientError => e
     msg = "Unable to sync corporation #{corporation_id} from ESI: #{e.message}"
     raise Error, msg, cause: e
   end
