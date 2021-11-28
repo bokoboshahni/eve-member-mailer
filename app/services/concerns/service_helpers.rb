@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Helpers for services.
 module ServiceHelpers
   extend ActiveSupport::Concern
 

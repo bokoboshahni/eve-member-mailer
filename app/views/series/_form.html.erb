@@ -1,0 +1,27 @@
+<div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+  <div class="sm:col-span-6">
+    <%= f.label :corporation_id, 'Corporation', class: 'block text-sm font-medium text-gray-700' %>
+    <div class="mt-1">
+      <%= f.collection_select :corporation_id, current_user.accessible_corporations, :id, :name, { prompt: true }, { class: 'mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md' } %>
+    </div>
+  </div>
+  
+  <div class="sm:col-span-6">
+    <%= f.label :name, 'Name', class: 'block text-sm font-medium text-gray-700' %>
+    <div class="mt-1">
+      <%= f.text_field :name, class: 'appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' %>
+    </div>
+  </div>
+
+  <div class="sm:col-span-6">
+    <%= f.label :description, 'Description', class: 'block text-sm font-medium text-gray-700' %>
+    <div class="mt-1">
+      <%= f.text_field :description, class: 'appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm' %>
+    </div>
+  </div>
+
+  <div class="sm:col-span-1">
+    <%= f.label :default_delivery_time, 'Delivery Window', class: 'block text-sm font-medium text-gray-700' %>
+    <%= f.time_select :default_delivery_time, { minute_step: 15 }, class: 'mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md' %>
+  </div>
+</div>

@@ -2,14 +2,11 @@
 
 require 'esi/client'
 
-# Helpers for ESI API calls.
 module ESIHelpers
   extend ActiveSupport::Concern
 
   def esi
-    @esi ||= ESI::Client.new(user_agent: Rails.application.config.x.esi.user_agent,
-                             cache: { store: Rails.cache, logger: Rails.logger,
-                                      instrumenter: ActiveSupport::Notifications })
+    @esi ||= ESI::Client.new(user_agent: Rails.application.config.x.esi.user_agent)
   end
 
   def esi_authorize!(authorization)

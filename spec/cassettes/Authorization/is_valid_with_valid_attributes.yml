@@ -2,30 +2,28 @@
 http_interactions:
 - request:
     method: get
-    uri: https://esi.evetech.net/latest/characters/96224792
+    uri: https://esi.evetech.net/latest/characters/96224792/
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
       - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - application/json
+      Expect:
+      - ''
   response:
     status:
       code: 200
-      message: OK
+      message: ''
     headers:
       Date:
-      - Wed, 14 Jul 2021 20:11:38 GMT
+      - Wed, 15 Sep 2021 22:22:16 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '1080'
-      Connection:
-      - keep-alive
+      - '1064'
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Headers:
@@ -43,11 +41,11 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"5a003dd4c3afa0cab5628448bf93759ffe7023ba29ad04b610705926"'
+      - '"98b2eedd9e9ee135485ba85d28b450c651d560c871f6364543b8f4a0"'
       Expires:
-      - Thu, 15 Jul 2021 19:47:24 GMT
+      - Thu, 16 Sep 2021 14:23:03 GMT
       Last-Modified:
-      - Wed, 14 Jul 2021 19:47:24 GMT
+      - Wed, 15 Sep 2021 14:23:03 GMT
       Strict-Transport-Security:
       - max-age=31536000
       Vary:
@@ -55,12 +53,12 @@ http_interactions:
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '22'
+      - '44'
       X-Esi-Request-Id:
-      - 7e2cbc25-f7c6-4967-912b-455df890ae84
+      - bae6093b-f343-48e5-bcd9-aefbef9d04bc
     body:
-      encoding: UTF-8
-      string: '{"ancestry_id":7,"birthday":"2016-02-12T09:08:06Z","bloodline_id":2,"corporation_id":1000167,"description":"u''<font
+      encoding: ASCII-8BIT
+      string: '{"birthday":"2016-02-12T09:08:06Z","bloodline_id":2,"corporation_id":1000167,"description":"u''<font
         size=\"12\" color=\"#bfffffff\">-------------<\/font><font size=\"12\" color=\"#ff00ff00\">\\ufeda\\ufef4\\ufeb3
         \\ufef1\\ufe8e\\ufeeb \\ufeac\\ufed8\\ufee8\\ufee3 \\u060c\\u0663\\u0661\\u0665
         \\ufeb2\\ufee4\\ufef4\\ufe9f \\ufee2\\ufeb3\\ufe8e\\ufe91<\/font><font size=\"12\"
@@ -70,33 +68,31 @@ http_interactions:
         ad-Din al-Jawahiri<\/a><\/loc><\/font><font size=\"12\" color=\"#bfffffff\">
         <br>    <\/font><font size=\"12\" color=\"#ffffa600\"><loc><a href=\"http:\/\/www.minerbumping.com\/p\/the-code.html\">http:\/\/www.minerbumping.com\/p\/the-code.html<\/a><\/loc><br><\/font><font
         size=\"12\" color=\"#bfffffff\">---------------------------------------------------<\/font>''","gender":"male","name":"Mitani","race_id":1,"security_status":0.0}'
-  recorded_at: Wed, 14 Jul 2021 20:11:38 GMT
+  recorded_at: Wed, 15 Sep 2021 22:22:16 GMT
 - request:
     method: get
-    uri: https://esi.evetech.net/latest/characters/96224792/corporationhistory
+    uri: https://esi.evetech.net/latest/characters/96224792/corporationhistory/
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
       - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - application/json
+      Expect:
+      - ''
   response:
     status:
       code: 200
-      message: OK
+      message: ''
     headers:
       Date:
-      - Wed, 14 Jul 2021 20:11:38 GMT
+      - Wed, 15 Sep 2021 22:22:16 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
       - '85'
-      Connection:
-      - keep-alive
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Headers:
@@ -116,47 +112,45 @@ http_interactions:
       Etag:
       - '"c3f408ca0e711d4e3754e248c29e92bdc8b9a9aa45032a8bedd1bd49"'
       Expires:
-      - Thu, 15 Jul 2021 19:47:24 GMT
+      - Thu, 16 Sep 2021 14:23:03 GMT
       Last-Modified:
-      - Wed, 14 Jul 2021 19:47:24 GMT
+      - Wed, 15 Sep 2021 14:23:03 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '22'
+      - '44'
       X-Esi-Request-Id:
-      - 4759b865-8b04-427e-b146-213da3565b02
+      - 20ac9e75-9f79-4638-9909-0604a57592ce
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: '[{"corporation_id":1000167,"record_id":41078283,"start_date":"2016-02-12T09:08:00Z"}]'
-  recorded_at: Wed, 14 Jul 2021 20:11:38 GMT
+  recorded_at: Wed, 15 Sep 2021 22:22:16 GMT
 - request:
     method: get
-    uri: https://esi.evetech.net/latest/corporations/1000167
+    uri: https://esi.evetech.net/latest/characters/96224792/portrait/
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
       - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
-      - "*/*"
+      - application/json
+      Expect:
+      - ''
   response:
     status:
       code: 200
-      message: OK
+      message: ''
     headers:
       Date:
-      - Wed, 14 Jul 2021 20:11:39 GMT
+      - Wed, 15 Sep 2021 22:22:16 GMT
       Content-Type:
       - application/json; charset=UTF-8
       Content-Length:
-      - '470'
-      Connection:
-      - keep-alive
+      - '410'
       Access-Control-Allow-Credentials:
       - 'true'
       Access-Control-Allow-Headers:
@@ -174,26 +168,142 @@ http_interactions:
       Cache-Control:
       - public
       Etag:
-      - '"f76dd34adfd054f61dacca59d572d4a53d05a5267fcc193d31d2080a"'
+      - W/"c3e85bae80f1282ea81ae7776fca8162c5e64a03fcdb38e4173cbf56"
       Expires:
-      - Wed, 14 Jul 2021 20:25:50 GMT
+      - Thu, 16 Sep 2021 11:05:00 GMT
       Last-Modified:
-      - Wed, 14 Jul 2021 19:25:50 GMT
+      - Tue, 14 Sep 2021 11:14:00 GMT
       Strict-Transport-Security:
       - max-age=31536000
       X-Esi-Error-Limit-Remain:
       - '100'
       X-Esi-Error-Limit-Reset:
-      - '21'
+      - '44'
       X-Esi-Request-Id:
-      - 6c56ce4c-e708-41c7-87fc-3e82fc373b50
+      - 9b43d584-2576-45ee-99b7-8607df6c6942
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
+      string: '{"px128x128":"https:\/\/images.evetech.net\/characters\/96224792\/portrait?tenant=tranquility&size=128","px256x256":"https:\/\/images.evetech.net\/characters\/96224792\/portrait?tenant=tranquility&size=256","px512x512":"https:\/\/images.evetech.net\/characters\/96224792\/portrait?tenant=tranquility&size=512","px64x64":"https:\/\/images.evetech.net\/characters\/96224792\/portrait?tenant=tranquility&size=64"}'
+  recorded_at: Wed, 15 Sep 2021 22:22:16 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/corporations/1000167/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 22:22:16 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '470'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"0f5ff438a5b171a5021e43e40968cb646d1af427ca390e5af8e80ac9"'
+      Expires:
+      - Wed, 15 Sep 2021 22:29:04 GMT
+      Last-Modified:
+      - Wed, 15 Sep 2021 21:29:04 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '44'
+      X-Esi-Request-Id:
+      - d764cb0b-b1b1-45b7-8a9f-1be6d994f063
+    body:
+      encoding: ASCII-8BIT
       string: '{"ceo_id":3004193,"creator_id":1,"description":"The State War Academy
         was founded shortly after the Caldari State came into being while the war
         with the Gallente Federation was still in full swing. Due to this, the academy
         has always had a very combat oriented slant, as opposed to the broader scope
-        of ship handling.","home_station_id":60014659,"member_count":2397022,"name":"State
+        of ship handling.","home_station_id":60014659,"member_count":2419175,"name":"State
         War Academy","shares":100000000,"tax_rate":0.10999999940395355,"ticker":"SWA","url":""}'
-  recorded_at: Wed, 14 Jul 2021 20:11:39 GMT
+  recorded_at: Wed, 15 Sep 2021 22:22:16 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/corporations/1000167/icons/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 22:22:17 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '298'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"c8701c8de6c3ea967c5ee06f725ea8e9d5167019437652b7cd7fefb9"'
+      Expires:
+      - Wed, 15 Sep 2021 23:22:17 GMT
+      Last-Modified:
+      - Wed, 15 Sep 2021 22:22:17 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '43'
+      X-Esi-Request-Id:
+      - cfc0bf19-e033-473e-82b9-511fc492228b
+    body:
+      encoding: ASCII-8BIT
+      string: '{"px128x128":"https:\/\/images.evetech.net\/corporations\/1000167\/logo?tenant=tranquility&size=128","px256x256":"https:\/\/images.evetech.net\/corporations\/1000167\/logo?tenant=tranquility&size=256","px64x64":"https:\/\/images.evetech.net\/corporations\/1000167\/logo?tenant=tranquility&size=64"}'
+  recorded_at: Wed, 15 Sep 2021 22:22:17 GMT
 recorded_with: VCR 6.0.0

@@ -1,12 +1,6 @@
 # frozen_string_literal: true
 
-# Sends an EVEMail.
 class SendEVEMail < ApplicationService
-  # An error sending an EVEmail.
-  class DeliveryError < StandardError; end
-
-  include ESIHelpers
-
   def initialize(sender, recipient, subject, body)
     super
 
@@ -24,18 +18,10 @@ class SendEVEMail < ApplicationService
       subject: subject,
       body: body
     }
-    response = esi_user_post(esi, sender, "/latest/characters/#{sender.eve_character_id}/mail", {}, {}, params)
-
-    raise DeliveryError, "#{response.status} #{response.body['error']}" unless response.success?
-
-    response.body
+    esi.post_character_mail(character_id: sender.id, params: params)
   end
 
   private
 
   attr_reader :sender, :recipient, :subject, :body
-
-  def esi
-    @esi ||= esi_client(sender, :json)
-  end
 end

@@ -37,7 +37,7 @@
 require 'rails_helper'
 
 RSpec.describe UserCharacter, type: :model, vcr: true do
-  let(:character) { SyncESICharacter.new('96224792').call }
+  let(:character) { Character::SyncFromESI.new('96224792').call }
   let(:user) { FactoryBot.create(:user) }
 
   it 'is valid with valid attributes' do

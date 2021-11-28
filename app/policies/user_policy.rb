@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-# Authorization policy for users.
 class UserPolicy < ApplicationPolicy
-  # Scope for user authorization policy.
   class Scope < Scope
     def resolve
       scope.all

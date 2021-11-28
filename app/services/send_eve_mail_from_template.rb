@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Sends an EVEMail from a template.
 class SendEVEMailFromTemplate < ApplicationService
   def initialize(sender, recipient, subject, body)
     super
@@ -22,9 +21,9 @@ class SendEVEMailFromTemplate < ApplicationService
 
   def context
     {
-      'corporation' => corporation.name,
-      'sender' => sender.eve_character_name,
-      'recipient' => recipient.name
+      'corporation' => corporation.attributes,
+      'sender' => sender.attributes,
+      'recipient' => recipient.attributes
     }
   end
 

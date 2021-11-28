@@ -3,7 +3,7 @@
 require 'fileutils'
 
 module Rails
-  module DevLograge # :nodoc:
+  module DevLograge
     class << self
       FILE = 'tmp/lograge-dev.txt'
 

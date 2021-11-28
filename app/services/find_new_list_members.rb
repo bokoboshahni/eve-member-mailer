@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Discovers new list members.
 class FindNewListMembers < ApplicationService
   def initialize(list)
     super
@@ -104,7 +103,7 @@ class FindNewListMembers < ApplicationService
   end
 
   def corporation_members
-    @corporation_members ||= list.corporation.members.kept
+    @corporation_members ||= list.corporation.characters.kept
   end
 
   def current_members
@@ -112,6 +111,6 @@ class FindNewListMembers < ApplicationService
   end
 
   def members_not_in_list
-    @members_not_in_list ||= Member.find(corporation_members.map(&:id) - current_members.map(&:id))
+    @members_not_in_list ||= Character.find(corporation_members.map(&:id) - current_members.map(&:id))
   end
 end

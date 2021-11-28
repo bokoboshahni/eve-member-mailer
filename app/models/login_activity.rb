@@ -9,20 +9,20 @@
 # Name                       | Type               | Attributes
 # -------------------------- | ------------------ | ---------------------------
 # **`id`**                   | `bigint`           | `not null, primary key`
-# **`city`**                 | `string`           |
-# **`context`**              | `string`           |
-# **`country`**              | `string`           |
-# **`failure_reason`**       | `string`           |
-# **`identity_bidx`**        | `string`           |
+# **`city`**                 | `text`             |
+# **`context`**              | `text`             |
+# **`country`**              | `text`             |
+# **`failure_reason`**       | `text`             |
+# **`identity_bidx`**        | `text`             |
 # **`identity_ciphertext`**  | `text`             |
-# **`ip_bidx`**              | `string`           |
+# **`ip_bidx`**              | `text`             |
 # **`ip_ciphertext`**        | `text`             |
 # **`latitude`**             | `float`            |
 # **`longitude`**            | `float`            |
 # **`referrer`**             | `text`             |
-# **`region`**               | `string`           |
-# **`scope`**                | `string`           |
-# **`strategy`**             | `string`           |
+# **`region`**               | `text`             |
+# **`scope`**                | `text`             |
+# **`strategy`**             | `text`             |
 # **`success`**              | `boolean`          |
 # **`user_agent`**           | `text`             |
 # **`user_type`**            | `string`           |

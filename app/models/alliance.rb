@@ -10,7 +10,10 @@
 # ------------------- | ------------------ | ---------------------------
 # **`id`**            | `bigint`           | `not null, primary key`
 # **`discarded_at`**  | `datetime`         |
+# **`icon_url_128`**  | `text`             |
+# **`icon_url_64`**   | `text`             |
 # **`name`**          | `text`             | `not null`
+# **`ticker`**        | `text`             | `not null`
 # **`created_at`**    | `datetime`         | `not null`
 # **`updated_at`**    | `datetime`         | `not null`
 # **`faction_id`**    | `integer`          |
@@ -21,11 +24,9 @@
 #     * **`discarded_at`**
 #
 class Alliance < ApplicationRecord
-  has_many :broadcasts, inverse_of: :alliance, dependent: :restrict_with_exception
-  has_many :campaign_triggers, inverse_of: :alliance, dependent: :restrict_with_exception
-  has_many :characters, inverse_of: :alliance, dependent: :restrict_with_exception
-  has_many :corporation_memberships, inverse_of: :alliance, dependent: :restrict_with_exception
   has_many :corporations, inverse_of: :alliance, dependent: :restrict_with_exception
-  has_many :deliveries, inverse_of: :alliance, dependent: :restrict_with_exception
-  has_many :list_conditions, inverse_of: :alliance, dependent: :restrict_with_exception
+
+  def sync_from_esi!
+    Alliance::SyncFromESI.call(id)
+  end
 end

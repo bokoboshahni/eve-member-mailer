@@ -2,5 +2,5 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Healths', type: :request do
+RSpec.describe 'Health checks', type: :request do
 end

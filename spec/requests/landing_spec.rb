@@ -2,10 +2,10 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Landings', type: :request do
+RSpec.describe 'Landing page', type: :request do
   describe 'GET #index', vcr: true do
     context 'when signed in' do
-      let(:character) { SyncESICharacter.new('96224792').call }
+      let(:character) { Character::SyncFromESI.new('96224792').call }
       let(:user) { User.create! }
 
       before do

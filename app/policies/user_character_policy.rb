@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-# Authorization policy for user characters.
 class UserCharacterPolicy < ApplicationPolicy
-  # Authorization policy scope for user characters.
   class Scope < Scope
     def resolve
       scope.where(user_id: user.id)
@@ -18,7 +16,7 @@ class UserCharacterPolicy < ApplicationPolicy
   end
 
   def create?
-    admin?
+    true
   end
 
   def new?

@@ -1,0 +1,668 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/characters/2113024536/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 23:38:01 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '207'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"4b135d3e8d3afe6d1b1521457942c981e39e3cf980632611b78a6bb9"'
+      Expires:
+      - Thu, 16 Sep 2021 16:13:48 GMT
+      Last-Modified:
+      - Wed, 15 Sep 2021 16:13:48 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '59'
+      X-Esi-Request-Id:
+      - 36750f94-5f42-4d6d-a586-6cdb43d14563
+    body:
+      encoding: ASCII-8BIT
+      string: '{"alliance_id":99003214,"birthday":"2017-07-20T16:28:17Z","bloodline_id":13,"corporation_id":98624572,"description":"","gender":"male","name":"Bokobo
+        Shahni","race_id":4,"security_status":0.7826388230000001}'
+  recorded_at: Wed, 15 Sep 2021 23:38:01 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/characters/2113024536/corporationhistory/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 23:38:01 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '527'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"6bb6b4bf09621cc35ad9d5264268aebcb9af67b324ace08c08fda5cb"'
+      Expires:
+      - Thu, 16 Sep 2021 04:12:46 GMT
+      Last-Modified:
+      - Wed, 15 Sep 2021 04:12:46 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '59'
+      X-Esi-Request-Id:
+      - f6280daa-db59-4530-ac4a-d156c89c0dce
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"corporation_id":98624572,"record_id":56317991,"start_date":"2021-08-22T01:18:00Z"},{"corporation_id":98169165,"record_id":54311552,"start_date":"2020-11-11T01:58:00Z"},{"corporation_id":98660671,"is_deleted":true,"record_id":54098671,"start_date":"2020-10-15T14:46:00Z"},{"corporation_id":1000080,"record_id":54098651,"start_date":"2020-10-15T14:44:00Z"},{"corporation_id":98524825,"record_id":45588552,"start_date":"2017-08-08T02:17:00Z"},{"corporation_id":1000077,"record_id":45473232,"start_date":"2017-07-20T16:28:00Z"}]'
+  recorded_at: Wed, 15 Sep 2021 23:38:01 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/characters/2113024536/portrait/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 23:38:01 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '418'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - W/"c3e85bae80f1282ea81ae7776fca8162c5e64a03fcdb38e4173cbf56"
+      Expires:
+      - Thu, 16 Sep 2021 11:05:00 GMT
+      Last-Modified:
+      - Tue, 14 Sep 2021 11:14:00 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '59'
+      X-Esi-Request-Id:
+      - 52928ad9-f153-4d6a-85bb-a0d7e1d1acb4
+    body:
+      encoding: ASCII-8BIT
+      string: '{"px128x128":"https:\/\/images.evetech.net\/characters\/2113024536\/portrait?tenant=tranquility&size=128","px256x256":"https:\/\/images.evetech.net\/characters\/2113024536\/portrait?tenant=tranquility&size=256","px512x512":"https:\/\/images.evetech.net\/characters\/2113024536\/portrait?tenant=tranquility&size=512","px64x64":"https:\/\/images.evetech.net\/characters\/2113024536\/portrait?tenant=tranquility&size=64"}'
+  recorded_at: Wed, 15 Sep 2021 23:38:01 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/alliances/99003214/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 23:38:01 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '173'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"20586886495c1f21c4522323fc69ab262101e36c35b92bdb8164763c"'
+      Expires:
+      - Thu, 16 Sep 2021 00:00:58 GMT
+      Last-Modified:
+      - Wed, 15 Sep 2021 23:00:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '59'
+      X-Esi-Request-Id:
+      - 7038a1eb-f5a2-4ce9-8ad7-2bde6bd39428
+    body:
+      encoding: ASCII-8BIT
+      string: '{"creator_corporation_id":98199293,"creator_id":91432281,"date_founded":"2013-05-06T22:20:14Z","executor_corporation_id":98199293,"name":"Brave
+        Collective","ticker":"BRAVE"}'
+  recorded_at: Wed, 15 Sep 2021 23:38:01 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/alliances/99003214/icons/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 23:38:01 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '140'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - W/"c3e85bae80f1282ea81ae7776fca8162c5e64a03fcdb38e4173cbf56"
+      Expires:
+      - Thu, 16 Sep 2021 11:05:00 GMT
+      Last-Modified:
+      - Tue, 14 Sep 2021 11:14:00 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '59'
+      X-Esi-Request-Id:
+      - fa80b56c-3e69-4b7e-b98f-433ebeb4baca
+    body:
+      encoding: ASCII-8BIT
+      string: '{"px128x128":"https:\/\/images.evetech.net\/Alliance\/99003214_128.png","px64x64":"https:\/\/images.evetech.net\/Alliance\/99003214_64.png"}'
+  recorded_at: Wed, 15 Sep 2021 23:38:01 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/corporations/98624572/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 23:38:01 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '1105'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"df674b837ef67e7f7018bf2697a4b8fb52b2b03b8eb3f3097f7fbf5b"'
+      Expires:
+      - Thu, 16 Sep 2021 00:30:00 GMT
+      Last-Modified:
+      - Wed, 15 Sep 2021 23:30:00 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '59'
+      X-Esi-Request-Id:
+      - b3721f1d-32f9-4acf-8d5f-21f4b97e8451
+    body:
+      encoding: ASCII-8BIT
+      string: '{"alliance_id":99003214,"ceo_id":2112021314,"creator_id":2113960331,"date_founded":"2019-12-18T02:15:42Z","description":"<font
+        size=\"13\" color=\"#ff999999\"><\/font><font size=\"13\" color=\"#b3ffffff\">New\/returning
+        to the game - no problem, our directors and members are always available to
+        help with anything. Busy and cant play as much as you would like to, real
+        life comes first for those in our corp. We do everything in game in either
+        our High or Null sec corp.<br><br>Join our Discord Public Channel: <\/font><font
+        size=\"13\" color=\"#ffffe400\"><a href=\"https:\/\/discord.gg\/pydbTcY\">https:\/\/discord.gg\/pydbTcY<\/a><\/font><font
+        size=\"13\" color=\"#b3ffffff\"> <br><br>Eve for us is a way to spend our
+        extra time, its not a job. So come and pew pew, or munch on some rocks, enjoy
+        yourself, it is a game after all.<\/font>","home_station_id":60003466,"member_count":1038,"name":"Industrial
+        Mining and Mayhem","shares":1000,"tax_rate":0.10000000149011612,"ticker":"MAYEM","url":"https:\/\/wiki.bravecollective.com\/public\/corps\/industrial_mining_and_mayhem\/start","war_eligible":true}'
+  recorded_at: Wed, 15 Sep 2021 23:38:01 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/corporations/98624572/icons/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 23:38:02 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '301'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"f9a82e34f8c61fc1db064264a2d985b1e19bbe4ae1044e418dcd2a16"'
+      Expires:
+      - Thu, 16 Sep 2021 00:34:14 GMT
+      Last-Modified:
+      - Wed, 15 Sep 2021 23:34:14 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '58'
+      X-Esi-Request-Id:
+      - b46c947c-a900-424a-b5e4-8b3c5c8ba704
+    body:
+      encoding: ASCII-8BIT
+      string: '{"px128x128":"https:\/\/images.evetech.net\/corporations\/98624572\/logo?tenant=tranquility&size=128","px256x256":"https:\/\/images.evetech.net\/corporations\/98624572\/logo?tenant=tranquility&size=256","px64x64":"https:\/\/images.evetech.net\/corporations\/98624572\/logo?tenant=tranquility&size=64"}'
+  recorded_at: Wed, 15 Sep 2021 23:38:01 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/corporations/98624572/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 23:38:02 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '1105'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"df674b837ef67e7f7018bf2697a4b8fb52b2b03b8eb3f3097f7fbf5b"'
+      Expires:
+      - Thu, 16 Sep 2021 00:30:00 GMT
+      Last-Modified:
+      - Wed, 15 Sep 2021 23:30:00 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Accept-Encoding
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '58'
+      X-Esi-Request-Id:
+      - cf24a1e0-1548-4e7a-80e5-88f9c7647ff4
+    body:
+      encoding: ASCII-8BIT
+      string: '{"alliance_id":99003214,"ceo_id":2112021314,"creator_id":2113960331,"date_founded":"2019-12-18T02:15:42Z","description":"<font
+        size=\"13\" color=\"#ff999999\"><\/font><font size=\"13\" color=\"#b3ffffff\">New\/returning
+        to the game - no problem, our directors and members are always available to
+        help with anything. Busy and cant play as much as you would like to, real
+        life comes first for those in our corp. We do everything in game in either
+        our High or Null sec corp.<br><br>Join our Discord Public Channel: <\/font><font
+        size=\"13\" color=\"#ffffe400\"><a href=\"https:\/\/discord.gg\/pydbTcY\">https:\/\/discord.gg\/pydbTcY<\/a><\/font><font
+        size=\"13\" color=\"#b3ffffff\"> <br><br>Eve for us is a way to spend our
+        extra time, its not a job. So come and pew pew, or munch on some rocks, enjoy
+        yourself, it is a game after all.<\/font>","home_station_id":60003466,"member_count":1038,"name":"Industrial
+        Mining and Mayhem","shares":1000,"tax_rate":0.10000000149011612,"ticker":"MAYEM","url":"https:\/\/wiki.bravecollective.com\/public\/corps\/industrial_mining_and_mayhem\/start","war_eligible":true}'
+  recorded_at: Wed, 15 Sep 2021 23:38:01 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/corporations/98624572/icons/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 23:38:02 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '301'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"f9a82e34f8c61fc1db064264a2d985b1e19bbe4ae1044e418dcd2a16"'
+      Expires:
+      - Thu, 16 Sep 2021 00:34:14 GMT
+      Last-Modified:
+      - Wed, 15 Sep 2021 23:34:14 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '58'
+      X-Esi-Request-Id:
+      - 5cd5b99d-9eda-46d4-921c-6ff06a27ba7c
+    body:
+      encoding: ASCII-8BIT
+      string: '{"px128x128":"https:\/\/images.evetech.net\/corporations\/98624572\/logo?tenant=tranquility&size=128","px256x256":"https:\/\/images.evetech.net\/corporations\/98624572\/logo?tenant=tranquility&size=256","px64x64":"https:\/\/images.evetech.net\/corporations\/98624572\/logo?tenant=tranquility&size=64"}'
+  recorded_at: Wed, 15 Sep 2021 23:38:01 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/alliances/99003214/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 23:38:02 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '173'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - '"20586886495c1f21c4522323fc69ab262101e36c35b92bdb8164763c"'
+      Expires:
+      - Thu, 16 Sep 2021 00:00:58 GMT
+      Last-Modified:
+      - Wed, 15 Sep 2021 23:00:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '58'
+      X-Esi-Request-Id:
+      - 03fbd8da-947c-4906-bf04-8365cae9a9ff
+    body:
+      encoding: ASCII-8BIT
+      string: '{"creator_corporation_id":98199293,"creator_id":91432281,"date_founded":"2013-05-06T22:20:14Z","executor_corporation_id":98199293,"name":"Brave
+        Collective","ticker":"BRAVE"}'
+  recorded_at: Wed, 15 Sep 2021 23:38:02 GMT
+- request:
+    method: get
+    uri: https://esi.evetech.net/latest/alliances/99003214/icons/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - EVE Member Mailer/1.0; (+https://github.com/bokoboshahni/eve-member-mailer)
+      Accept:
+      - application/json
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Date:
+      - Wed, 15 Sep 2021 23:38:02 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      Content-Length:
+      - '140'
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,If-None-Match,X-User-Agent
+      Access-Control-Allow-Methods:
+      - GET,HEAD,OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - Content-Type,Warning,ETag,X-Pages,X-ESI-Error-Limit-Remain,X-ESI-Error-Limit-Reset
+      Access-Control-Max-Age:
+      - '600'
+      Allow:
+      - GET,HEAD,OPTIONS
+      Cache-Control:
+      - public
+      Etag:
+      - W/"c3e85bae80f1282ea81ae7776fca8162c5e64a03fcdb38e4173cbf56"
+      Expires:
+      - Thu, 16 Sep 2021 11:05:00 GMT
+      Last-Modified:
+      - Tue, 14 Sep 2021 11:14:00 GMT
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Esi-Error-Limit-Remain:
+      - '100'
+      X-Esi-Error-Limit-Reset:
+      - '58'
+      X-Esi-Request-Id:
+      - 90ed3d8c-5cc5-4b45-937d-cdc95d048587
+    body:
+      encoding: ASCII-8BIT
+      string: '{"px128x128":"https:\/\/images.evetech.net\/Alliance\/99003214_128.png","px64x64":"https:\/\/images.evetech.net\/Alliance\/99003214_64.png"}'
+  recorded_at: Wed, 15 Sep 2021 23:38:02 GMT
+recorded_with: VCR 6.0.0

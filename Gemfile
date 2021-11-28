@@ -8,6 +8,7 @@ ruby '3.0.2'
 gem 'dotenv-rails', groups: %i[development test]
 
 gem 'activerecord-import', '~> 1.1'
+gem 'acts_as_list', '~> 1.0'
 gem 'ancestry', '~> 4.1'
 gem 'audited', '~> 5.0'
 gem 'authtrail', '~> 0.3'

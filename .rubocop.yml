@@ -62,3 +62,6 @@ RSpec/MultipleExpectations:
 
 RSpec/MultipleMemoizedHelpers:
   Max: 10
+
+Style/Documentation:
+  Enabled: false

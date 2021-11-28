@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Landing page controller.
 class LandingController < ApplicationController
   skip_after_action :verify_authorized
 

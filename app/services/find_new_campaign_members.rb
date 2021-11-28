@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Discovers new campaign members.
 class FindNewCampaignMembers < ApplicationService
   def initialize(campaign)
     super
@@ -16,7 +15,7 @@ class FindNewCampaignMembers < ApplicationService
       all_new_members = lists.each_with_object([]) do |list, new_members|
         list_member_ids = list.members.map(&:id)
         current_member_ids = current_members.map(&:id)
-        new_members << list_member_ids - current_member_ids
+        new_members << (list_member_ids - current_member_ids)
       end
       Member.find(all_new_members.flatten.uniq)
     when 'date'

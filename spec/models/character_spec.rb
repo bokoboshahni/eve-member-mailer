@@ -10,11 +10,16 @@
 # ----------------------------- | ------------------ | ---------------------------
 # **`id`**                      | `bigint`           | `not null, primary key`
 # **`birthday`**                | `date`             | `not null`
+# **`corporation_roles`**       | `text`             | `default([]), not null, is an Array`
 # **`corporation_start_date`**  | `date`             |
 # **`description`**             | `text`             |
 # **`discarded_at`**            | `datetime`         |
 # **`gender`**                  | `text`             | `not null`
 # **`name`**                    | `text`             | `not null`
+# **`portrait_url_128`**        | `text`             |
+# **`portrait_url_256`**        | `text`             |
+# **`portrait_url_512`**        | `text`             |
+# **`portrait_url_64`**         | `text`             |
 # **`security_status`**         | `decimal(, )`      |
 # **`title`**                   | `text`             |
 # **`created_at`**              | `datetime`         | `not null`

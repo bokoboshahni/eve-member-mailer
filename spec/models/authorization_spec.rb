@@ -11,7 +11,6 @@
 # **`id`**                        | `bigint`           | `not null, primary key`
 # **`access_token_ciphertext`**   | `text`             | `not null`
 # **`expires_at`**                | `datetime`         | `not null`
-# **`kind`**                      | `text`             | `not null`
 # **`refresh_token_ciphertext`**  | `text`             | `not null`
 # **`scopes`**                    | `text`             | `default([]), not null, is an Array`
 # **`created_at`**                | `datetime`         | `not null`
@@ -22,11 +21,6 @@
 #
 # * `index_authorizations_on_character_id`:
 #     * **`character_id`**
-# * `index_authorizations_on_kind`:
-#     * **`kind`**
-# * `index_unique_authorizations` (_unique_):
-#     * **`character_id`**
-#     * **`kind`**
 #
 # ### Foreign Keys
 #
@@ -36,7 +30,7 @@
 require 'rails_helper'
 
 RSpec.describe Authorization, type: :model, vcr: true do
-  let(:character) { SyncESICharacter.new('96224792').call }
+  let(:character) { Character::SyncFromESI.new('96224792').call }
 
   it 'is valid with valid attributes' do
     expect(FactoryBot.build(:authorization, character: character)).to be_valid
@@ -52,14 +46,6 @@ RSpec.describe Authorization, type: :model, vcr: true do
 
   it 'is invalid without an expiration timestamp' do
     expect(FactoryBot.build(:authorization, character: character, expires_at: nil)).not_to be_valid
-  end
-
-  it 'is invalid without a kind' do
-    expect(FactoryBot.build(:authorization, character: character, kind: nil)).not_to be_valid
-  end
-
-  it 'is invalid with an unacceptable kind' do
-    expect(FactoryBot.build(:authorization, character: character, kind: 'asdf')).not_to be_valid
   end
 
   it 'is invalid without a refresh token' do

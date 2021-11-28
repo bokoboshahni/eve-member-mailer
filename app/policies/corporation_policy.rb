@@ -1,11 +1,17 @@
 # frozen_string_literal: true
 
-# AUthorization policy for corporations.
 class CorporationPolicy < ApplicationPolicy
-  # Scope for corporation authorization policy.
   class Scope < Scope
     def resolve
       scope.all
     end
+  end
+
+  def index?
+    true
+  end
+
+  def show
+    user.corporations.pluck(:id).include?(record.id)
   end
 end

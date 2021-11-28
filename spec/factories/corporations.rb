@@ -11,7 +11,11 @@
 # **`id`**            | `bigint`           | `not null, primary key`
 # **`description`**   | `text`             |
 # **`discarded_at`**  | `datetime`         |
+# **`icon_url_128`**  | `text`             |
+# **`icon_url_256`**  | `text`             |
+# **`icon_url_64`**   | `text`             |
 # **`name`**          | `text`             | `not null`
+# **`ticker`**        | `text`             | `not null`
 # **`url`**           | `text`             |
 # **`created_at`**    | `datetime`         | `not null`
 # **`updated_at`**    | `datetime`         | `not null`
@@ -32,5 +36,7 @@
 #
 FactoryBot.define do
   factory :corporation do
+    name { Faker::Company.name }
+    ticker { Faker::Finance.ticker[0..4] }
   end
 end

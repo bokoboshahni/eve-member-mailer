@@ -235,7 +235,7 @@ jobs:
       - lint
       - security
       - test
-    if: github.event_name != 'pull_request' && github.event_name != 'release' && needs.lint.result == 'success' && needs.security.result == 'success' && needs.test.result == 'success'
+    if: github.event_name != 'release' && needs.lint.result == 'success' && needs.security.result == 'success' && needs.test.result == 'success'
 
     steps:
       - name: Checkout code
@@ -255,4 +255,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           npm install -g @semantic-release/changelog @semantic-release/git
-          npx semantic-release
+          npx semantic-release ${{ github.event_name == 'pull_request' && '--dry-run' || ' ' }}

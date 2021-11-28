@@ -1,17 +1,16 @@
 # frozen_string_literal: true
 
-# Authenticates a user for login via EVE SSO.
 class CreateAuthentication < ApplicationService
   class Error < RuntimeError; end
 
   class NotAllowedError < Error; end
 
-  class SyncError < Error; end
-
-  include AuthenticationHelpers
+  include AuthHelpers
 
   def call
     @character = sync_character!
+    @corporation = sync_corporation!(character.corporation_id)
+    @alliance = sync_alliance!(corporation.alliance_id) if corporation.alliance_id.present?
 
     raise NotAllowedError unless character_allowed?
 
@@ -24,11 +23,17 @@ class CreateAuthentication < ApplicationService
 
   private
 
-  attr_reader :character
+  attr_reader :character, :corporation, :alliance
+
+  delegate :id, to: :character, prefix: true
+  delegate :id, to: :corporation, prefix: true
+  delegate :id, to: :alliance, prefix: true, allow_nil: true
+
+  delegate :allowed_alliance_ids, :allowed_corporation_ids, to: :emm
 
   def character_allowed?
-    allowed_alliance_ids.include?(character.alliance_id.to_s) ||
-      allowed_corporation_ids.include?(character.corporation_id.to_s)
+    allowed_alliance_ids.include?(alliance_id) ||
+      allowed_corporation_ids.include?(corporation_id)
   end
 
   def user_character
@@ -41,17 +46,5 @@ class CreateAuthentication < ApplicationService
       user.main_character = character
       user
     end
-  end
-
-  def allowed_alliance_ids
-    emm_config.allowed_alliance_ids
-  end
-
-  def allowed_corporation_ids
-    emm_config.allowed_corporation_ids
-  end
-
-  def emm_config
-    Rails.application.config.x.emm
   end
 end

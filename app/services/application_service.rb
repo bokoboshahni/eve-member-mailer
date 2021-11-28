@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Base class for services.
 class ApplicationService
   include ServiceHelpers
 

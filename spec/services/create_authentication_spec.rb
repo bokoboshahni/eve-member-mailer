@@ -22,12 +22,12 @@ RSpec.describe CreateAuthentication, type: :service, vcr: true do
 
   context 'when the character is associated with an existing user' do
     before do
-      allow(Rails.application.config.x.emm).to receive(:allowed_alliance_ids).and_return(%w[99003214])
+      allow(Rails.application.config.x.emm).to receive(:allowed_alliance_ids).and_return([99_003_214])
     end
 
     it 'returns the user' do
       user = FactoryBot.create(:user)
-      character = SyncESICharacter.new(uid).call
+      character = Character::SyncFromESI.new(uid).call
       user.main_character = character
 
       expect(service.call.id).to eq(user.id)
@@ -36,7 +36,7 @@ RSpec.describe CreateAuthentication, type: :service, vcr: true do
 
   context 'when the character is not associated with an existing user' do
     before do
-      allow(Rails.application.config.x.emm).to receive(:allowed_alliance_ids).and_return(%w[99003214])
+      allow(Rails.application.config.x.emm).to receive(:allowed_alliance_ids).and_return([99_003_214])
     end
 
     let(:user_character) { UserCharacter.find_by!(character_id: uid, main: true) }

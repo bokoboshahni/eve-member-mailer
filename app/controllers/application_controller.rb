@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Application controller.
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   include Pundit
@@ -28,11 +27,6 @@ class ApplicationController < ActionController::Base
   helper_method :current_nav
   def current_nav
     @current_nav || controller_name
-  end
-
-  helper_method :current_corporation
-  def current_corporation
-    @current_corporation ||= current_user.corporation
   end
 
   def set_current(nav) # rubocop:disable Naming/AccessorMethodName

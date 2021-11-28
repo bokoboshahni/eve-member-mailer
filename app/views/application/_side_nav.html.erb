@@ -9,11 +9,9 @@
       <div class="flex flex-col flex-1 overflow-y-auto">
         <nav class="flex-1 px-2 py-4 space-y-1 bg-gray-800">
           <%= render partial: 'side_nav_link', locals: { current: current_nav?('dashboard'), text: 'Dashboard', icon: 'home', url: dashboard_path } %>
-          <%= render partial: 'side_nav_link', locals: { current: current_nav?('lists'), text: 'Lists', icon: 'collection', url: lists_path } %>
-          <%= render partial: 'side_nav_link', locals: { current: current_nav?('broadcasts'), text: 'Broadcasts', icon: 'speakerphone', url: broadcasts_path } %>
-          <%= render partial: 'side_nav_link', locals: { current: current_nav?('campaigns'), text: 'Campaigns', icon: 'mail', url: campaigns_path } %>
-          <%= render partial: 'side_nav_link', locals: { current: current_nav?('templates'), text: 'Templates', icon: 'template', url: templates_path } %>
-          <%= render partial: 'side_nav_link', locals: { current: current_nav?('reports'), text: 'Reports', icon: 'chart-bar', url: reports_path } %>
+          <%= render partial: 'side_nav_link', locals: { current: current_nav?('series'), text: 'Series', icon: 'mail', url: series_index_path } %>
+          <%= render partial: 'side_nav_link', locals: { current: current_nav?('corporations'), text: 'Corporations', icon: 'office-building', url: corporations_path } %>
+          <%#= render partial: 'side_nav_link', locals: { current: current_nav?('reports'), text: 'Reports', icon: 'chart-bar', url: reports_path } %>
         </nav>
       </div>
     </div>

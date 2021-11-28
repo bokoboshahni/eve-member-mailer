@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Renders a liquid template with the given context.
 class RenderLiquidTemplate < ApplicationService
   def initialize(template, context)
     super

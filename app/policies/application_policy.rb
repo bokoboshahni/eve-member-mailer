@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-# Application authorization policy.
 class ApplicationPolicy
-  # Scope for application authorization policy.
   class Scope
     attr_reader :user, :scope
 

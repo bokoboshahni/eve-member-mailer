@@ -17,7 +17,7 @@
       <%= image_pack_tag 'brave-logo.png', class: 'mx-auto h-48 w-auto' %>
     </div>
     <div>
-      <%= form_with url: user_login_omniauth_authorize_path do |f| %>
+      <%= form_with url: user_eve_omniauth_authorize_path do |f| %>
         <%= f.submit 'Log in with EVE SSO', type: :image, src: 'https://web.ccpgamescdn.com/eveonlineassets/developers/eve-sso-login-black-large.png', class: 'relative flex justify-center my-2 mx-auto' %>
       <% end %>
     </div>
